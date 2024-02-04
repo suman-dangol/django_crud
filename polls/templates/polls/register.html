@@ -1,0 +1,20 @@
+{% extends "polls/base.html" %} {%block content%}
+
+{%load crispy_forms_tags%}
+<body>
+<div class="container bg-light shadow-md p-5 form-layout">
+
+    <h5> Create an account </h1>
+    <hr>
+    <form method="POST">
+        {%csrf_token%}
+        {{ form | crispy }}
+        <br>
+        <button type="submit" class="btn btn-primary w-100 btn-blockp-2"> Create Account</button>
+    </form>
+        <div class="text-center">
+            <p>Already have an account?</p> <a href="{%url 'login'%}"> Login </a>
+        </div>
+</div>
+</body>
+{%endblock%}
